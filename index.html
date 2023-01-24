@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EnB Cell - Home</title>
+    <link rel="icon" type="image/x-icon" href="/components/ICO_Sample.ico">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="pages.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <nav>
+        <div id="nav_logo">
+            <img src="components/Logo_Navbar.png" alt="">
+        </div>
+        <div id="nav_options">
+            <label for="nav_trigger", id="nav_trigger_trigger" ><img src="components/hamburger.svg" alt="");></label>
+            <input type="checkbox" id="nav_trigger">
+            <ul>
+                <li><a href="/" for="nav_trigger">HOME</a></li>
+                <li><a href="/#section2" for="nav_trigger">ABOUT</a></li>
+                <li><a href="/events" for="nav_trigger">EVENTS / INITIATIVES</a></li>
+                <li><a href="/teams" for="nav_trigger">TEAMS</a></li>
+                <li><a href="/#section4">CONTACT US</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="wrapper">
+        <section id="section1">
+            <div class="section_containers">
+                <div id="image_logo_container">
+                    <img src="components/EB.png" alt="">
+                    <img src="components/Rocket.png" alt="">
+                </div>
+                <div id="headings_container">
+                    <h2>Entrepreneurship & Business Cell</h2>
+                    <h2>IIITDM Kurnool</h2>
+                    <h2 style="font-weight: 200;"><em>Think.. Transform.. Triumph...</em></h2>
+                </div>
+            </div>
+        </section>
+        <section id="section2">
+            <div class="section_containers">
+                <h1>What We Do</h1>
+                <div class="grid-wrapper">
+                    <div class="grid_row">
+                        <div class="object-wrapper image-content slide_from_left">
+                            <img src="homepage/Our Vision.png" class="grid_images" alt="">
+                        </div>
+                        <div class="object-wrapper para-content slide_from_right">
+                            <p>We aim to be the bridge between theoretical knowledge and practical application. We aspire to leverage and maximize the potential of students and turn them into great leaders. We strive to create an ecosystem for individuals with creative minds to jump from ideas to products. We continuously work towards facilitating entrepreneurial education and developing a comprehensive resource pool.</p>    
+                        </div>
+                    </div>
+                    <div class="grid_row">
+                        <div class="object-wrapper para-content slide_from_left">
+                            <p>We are missioned to unlock India’s latent inventive potential by focusing on young minds and making entrepreneurship simple and smooth for them. We aspire to play an important role in building India’s entrepreneurial ecosystem. We strive to foster entrepreneurial thinking, promote business knowledge and instill confidence in every student.</p>    
+                        </div>
+                        <div class="object-wrapper image-content slide_from_right">
+                            <img src="homepage/Our Mission.png" alt="">    
+                        </div>
+                    </div>
+                    <div class="grid_row">
+                        <div class="object-wrapper image-content slide_from_left">
+                            <img src="homepage/What we stand for.png" alt="">    
+                        </div>
+                        <div class="object-wrapper para-content slide_from_right">
+                            <p>We firmly believe India’s growth lies in youth turning themselves into job creators rather than seekers and breaking the inertia that is stopping them from taking the step. We stand for excellence, perseverance, innovation, research, collaboration and ethics. We strongly believe in equitable and non-discriminatory education for all and value creation through entrepreneurship.</p>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="section3">
+            <div class="section_containers">
+                <h1>Testimonials</h1>
+            <div class="carousel_container">
+                <button class="carousel_left carousel_buttons"></button>
+                <button class="carousel_right carousel_buttons"></button>
+                <div class="carousel">
+                    <div class="carousel_slider">
+                        <div style="background: url('testimonials/Carousel_images11.png'); background-size: cover; background-position: center;" class="carousel_section"></div>
+                        <div style="background: url('testimonials/Carousel_images2.png'); background-size: cover; background-position: center;" class="carousel_section"></div>
+                        <div style="background: url('testimonials/Carousel_images3.png'); background-size: cover; background-position: center;" class="carousel_section"></div>
+                        <div style="background: url('testimonials/Carousel_images4.png'); background-size: cover; background-position: center;" class="carousel_section"></div>
+                        <div style="background: url('testimonials/Carousel_images5.png'); background-size: cover; background-position: center;" class="carousel_section"></div>
+                        <div style="background: url('testimonials/Carousel_images6.png'); background-size: cover; background-position: center;" class="carousel_section"></div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                var left_button = document.getElementsByClassName("carousel_left")[0];
+                var right_button = document.getElementsByClassName("carousel_right")[0];
+                var carousel_slider = document.getElementsByClassName("carousel_slider")[0];
+                
+                var direction = 1;
+                const left_event = new Event('came_left')
+
+                carousel_slider.addEventListener('transitionend', ()=>{
+                    if(direction == 1){
+                        carousel_slider.appendChild(carousel_slider.firstElementChild);
+                        carousel_slider.style.transition = "none";
+                        carousel_slider.style.transform = "translateX(0px)";
+                        setTimeout(()=>{
+                            carousel_slider.style.transition = "all 0.5s ease-out";
+                        }, 0);
+                    }
+                })
+
+                left_button.addEventListener('click', ()=>{
+                    carousel_slider.prepend(carousel_slider.lastElementChild);
+                    carousel_slider.style.transition = "none";
+                    carousel_slider.style.transform = "translateX(-16.66%)";
+                    setTimeout(()=>{
+                        carousel_slider.style.transition = "all 0.5s ease-out";
+                        carousel_slider.style.transform = "translateX(0)";
+                    }, 0);
+                    direction = -1
+                })
+
+                right_button.addEventListener('click', ()=>{
+                    carousel_slider.style.transform = "translateX(-16.66%)";
+                    direction = 1
+                })
+            </script>
+            </div>
+        </section>
+        <section id="section4">
+            <div class="section_containers">
+                <h1>Contact Us</h1>
+            <form action="/message" method="POST">
+                <div class="form_div">
+                    <label for="Name">Name</label>
+                    <input type="text" name="Name" id="Name" required>
+                </div>
+                <div class="form_div">
+                    <label for="E-Mail">E-Mail</label>
+                    <input type="text" name="E-Mail" id="E-Mail" required>    
+                </div>
+                <div class="form_div">
+                    <label for="Subject">Subject</label>
+                    <input type="text" name="Subject" id="Subject" required>    
+                </div>            
+                <div class="form_div">
+                    <label for="Message">Message</label>
+                    <textarea name="Message" id="Message" cols="30" rows="10" required></textarea>
+                </div>
+                <div style="display: flex; justify-content: center;">
+                    <button type="submit">Send</button>
+                </div>
+            </form>
+            </div>
+        </section>
+        <footer>
+            <div class="footerblocks" style="height: 100%">
+                <img src="components/College Logo.png" alt="" style="height: 175px; filter: saturate(65%);">
+            </div>
+            <div id="contactlinks" class="footerblocks">
+                <h3>CONTACT</h3>
+                <ul>
+                    <li><i class="fa fa-envelope"></i>   enb@iiitk.ac.in</li>
+                    <li><i class="fa fa-phone"></i>   8378903867</li>
+                </ul>
+            </div>
+            <div id="contactlinks" class="footerblocks">
+                <h3>OTHER LINKS</h3>
+                <ul>
+                    <li><a href="/" for="nav_trigger">Home</a></li>
+                    <li><a href="/events" for="nav_trigger">Events / Initiatives</a></li>
+                    <li><a href="/teams" for="nav_trigger">Teams</a></li>
+                </ul>
+            </div>
+            <div id="community" class="footerblocks">
+                <h3>COMMUNITY</h3>
+                <div style="display: grid; grid-template-columns: 50px 50px; grid-template-rows: 50px 50px; grid-gap: 10px; align-items: center; justify-content: center;">
+                    <a href="https://twitter.com/EnB_iiitk" class="fa fa-twitter"></a>
+                    <a href="https://www.linkedin.com/company/enb-iiitdm-kurnool/" class="fa fa-linkedin"></a>
+                    <a href="https://www.youtube.com/@EnB_" class="fa fa-youtube"></a>
+                    <a href="https://instagram.com/enb_iiitdmkl?igshid=YmMyMTA2M2Y=" class="fa fa-instagram"></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
